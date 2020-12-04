@@ -1,7 +1,9 @@
 import cipher
+import Encryption
+import Decryption
 
 
-class UserMenu():
+class UserMenu(Encryption, Decryption):
     """
     takes in user input
     """
@@ -10,5 +12,5 @@ class UserMenu():
         self.cipher = cipher
 
     def user_chipher(self, cipher):
-
-        pass
+        if cipher == 'base64':
+            return
