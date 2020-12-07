@@ -1,6 +1,5 @@
-import cipher
-import Encryption
-import Decryption
+from encryption import Encryption
+from decryption import Decryption
 
 
 class UserMenu():
@@ -8,7 +7,7 @@ class UserMenu():
     takes in user input
     """
 
-    def __init__(self, cryptography, cipher, message, shift_num):
+    def __init__(self, cryptography, cipher, message, shift_num=1):
         self.cryptography = cryptography
         self.cipher = cipher
         self.message = message
@@ -16,6 +15,8 @@ class UserMenu():
 
     def cryptography_choice(self):
         if self.cryptography == 'encrypt':
-            Encryption.transform(self.cipher, self.message, self.shift_num)
+            encryption = Encryption(self.message)
+            return encryption.transform(self.cipher, self.shift_num)
         elif self.cryptography == 'decrypt':
-            Decryption.transform(self.cipher, self.message)
+            decryption = Decryption(self.message)
+            return decryption.transform(self.cipher)

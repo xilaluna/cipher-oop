@@ -1,6 +1,10 @@
-import UserMenu
+from usermenu import UserMenu
 
-user_cipher_choice = input(
-    'Which cipher would you like to use to decode/encrypt :')
+user_cryptography = input(
+    'What would you like to do decrypt/encrypt: ')
+user_cipher = input(
+    'which cipher would you like to choose base64 or ceaser cipher: ')
+user_message = input('What is your message: ')
 
-user_cryptography = input('Which cipher would you like to choose')
+start = UserMenu(user_cryptography, user_cipher, user_message)
+start.cryptography_choice()

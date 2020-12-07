@@ -1,4 +1,4 @@
-from Transform import Transform
+from transform import Transform
 import base64
 import string
 import collections
@@ -9,13 +9,16 @@ class Encryption(Transform):
     Encrypts users message
     """
 
-    def base64_encrypt(self, message):
-        message_ascii = message.encode('ascii')
+    def __init__(self, message):
+        self.message = message
+
+    def base64_encrypt(self):
+        message_ascii = self.message.encode('ascii')
         base64_bytes = base64.b64encode(message_ascii)
         encoded_message = base64_bytes.decode('ascii')
-        return encoded_message
+        print(encoded_message)
 
-    def caesar_cipher_encrypt(self, message, shift_num):
+    def caesar_cipher_encrypt(self, shift_num):
         uppercase_alphabet_list = collections.deque(string.ascii_uppercase)
         lowercase_alphabet_list = collections.deque(string.ascii_lowercase)
 
@@ -28,12 +31,12 @@ class Encryption(Transform):
         uppercase_replacement = string.maketrans(string.ascii_uppercase, upper)
         lowercase_replacement = string.maketrans(string.ascii_lowercase, lower)
 
-        encoded_message = message.translate(
+        encoded_message = self.message.translate(
             uppercase_replacement).translate(lowercase_replacement)
-        return encoded_message
+        print(encoded_message)
 
-    def transform(self, cipher, message, shift_num=1):
+    def transform(self, cipher, shift_num):
         if cipher == 'base64':
-            return self.base64_encrypt(message)
+            return self.base64_encrypt()
         elif cipher == 'caesar cipher':
-            return self.caesar_cipher_encrypt(message, shift_num)
+            return self.caesar_cipher_encrypt(shift_num)
