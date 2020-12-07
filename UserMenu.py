@@ -16,7 +16,7 @@ class UserMenu():
 
     def cryptography_choice(self):
         if self.cryptography == 'encrypt':
-            Encryption.transform()
+            Encryption.transform(self.cipher, self.message, self.shift_num)
         elif self.cryptography == 'decrypt':
 
     def user_chipher(self):
