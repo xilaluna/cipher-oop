@@ -32,5 +32,8 @@ class Encryption(Transform):
             uppercase_replacement).translate(lowercase_replacement)
         return encoded_message
 
-    def transform(self):
-        pass
+    def transform(self, cipher, message, shift_num=1):
+        if cipher == 'base64':
+            return self.base64_encrypt(message)
+        elif cipher == 'caesar cipher':
+            return self.caesar_cipher_encrypt(message, shift_num)

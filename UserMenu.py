@@ -14,7 +14,9 @@ class UserMenu():
         self.message = message
 
     def cryptography_choice(self):
-        pass
+        if self.cryptography == 'encrypt':
+            Encryption(message)
+        elif self.cryptography == 'decrypt':
 
     def user_chipher(self):
         if self.cipher == 'base64':
