@@ -1,5 +1,16 @@
-class Encryption():
+from Transform import Transform
+
+
+class Encryption(Transform):
     """
-    docstring
+    Encrypts users message
     """
-    pass
+
+    def base64_encrypt(self):
+        pass
+
+    def cesear_cipher_encrypt(self):
+        pass
+
+    def transform(self):
+        pass
