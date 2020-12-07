@@ -18,7 +18,4 @@ class UserMenu():
         if self.cryptography == 'encrypt':
             Encryption.transform(self.cipher, self.message, self.shift_num)
         elif self.cryptography == 'decrypt':
-
-    def user_chipher(self):
-        if self.cipher == 'base64':
-            return
+            Decryption.transform(self.cipher, self.message)
