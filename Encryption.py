@@ -19,6 +19,7 @@ class Encryption(Transform):
         print(encoded_message)
 
     def caesar_cipher_encrypt(self, shift_num):
+        shift_num = int(shift_num)
         uppercase_alphabet_list = collections.deque(string.ascii_uppercase)
         lowercase_alphabet_list = collections.deque(string.ascii_lowercase)
 
@@ -28,8 +29,8 @@ class Encryption(Transform):
         upper = ''.join(list(uppercase_alphabet_list))
         lower = ''.join(list(lowercase_alphabet_list))
 
-        uppercase_replacement = string.maketrans(string.ascii_uppercase, upper)
-        lowercase_replacement = string.maketrans(string.ascii_lowercase, lower)
+        uppercase_replacement = str.maketrans(string.ascii_uppercase, upper)
+        lowercase_replacement = str.maketrans(string.ascii_lowercase, lower)
 
         encoded_message = self.message.translate(
             uppercase_replacement).translate(lowercase_replacement)

@@ -9,7 +9,7 @@ user_message = input('What is your message: ')
 
 user_shift = None
 
-if user_cryptography == 1 and user_cipher == 2:
+if user_cryptography == "1" and user_cipher == "2":
     user_shift = input(f'shift value integer: ')
 
 start = UserMenu(user_cryptography, user_cipher, user_message, user_shift)
