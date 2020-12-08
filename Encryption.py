@@ -36,7 +36,7 @@ class Encryption(Transform):
         print(encoded_message)
 
     def transform(self, cipher, shift_num):
-        if cipher == 'base64':
+        if cipher == '1':
             return self.base64_encrypt()
-        elif cipher == 'caesar cipher':
+        elif cipher == '2':
             return self.caesar_cipher_encrypt(shift_num)

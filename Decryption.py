@@ -24,7 +24,7 @@ class Decryption(Transform):
             print(f'{i} | {encrypt.caesar_cipher_encrypt(i)}')
 
     def transform(self, cipher):
-        if cipher == 'base64':
+        if cipher == '1':
             return self.base64_decrypt()
-        elif cipher == 'caesar cipher':
+        elif cipher == '2':
             return self.caesar_cipher_decrypt()
